@@ -1,5 +1,11 @@
 # OPERAÇÕES ARITIMÉTICAS
 
+x = 2           # o valor de x é 2
+x += 2          # realiza o incremento de 2 para o valor de x
+x -= 1          # realiza o decremento de 1 para o valor de x
+x /= 2          # realiza a divisão de x por 2
+x *= 5          # realiza a multiplicação de x por 5
+
 adicao = 30 + 20
 print(adicao)
 
