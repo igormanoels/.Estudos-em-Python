@@ -1,4 +1,5 @@
 import os
+
 os.system('cls')
 
 # Entrar com quatro números e imprimir a média ponderada, sabendo-se que os
