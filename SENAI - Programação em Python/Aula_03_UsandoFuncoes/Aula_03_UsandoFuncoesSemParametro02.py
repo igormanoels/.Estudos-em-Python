@@ -13,7 +13,7 @@ def Advinhar():
             print("O número informado é maior que o número da sorte.\n")
         elif palpite < num_da_sorte:
             print("O número informado é menor que o número da sorte.\n")
-        jogadas+=1
+        jogadas += 1
         
     print(f"Parabéns, você acertou! O número da sorte {palpite}\n\n")
     

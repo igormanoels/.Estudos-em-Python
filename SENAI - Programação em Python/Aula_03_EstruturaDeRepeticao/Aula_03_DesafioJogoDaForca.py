@@ -33,3 +33,5 @@ if acertos == quantLetras:
     print(f"Parabéns você venceu! Palavra: {palavra_secreta}")
 else:
     print(f"Infelizmente você perdeu, a palavra era {palavra_secreta}")
+
+input("\n\nPressione o \"enter\" para encerrar...")

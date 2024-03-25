@@ -27,3 +27,5 @@ elif imc <= 39.9:
     print("\nClassificação: Obesidade Grave I.")
 else: 
     print("\nClassificação: Obesidade Grave II.")
+
+input("\n\nPressione o \"enter\" para encerrar...")
