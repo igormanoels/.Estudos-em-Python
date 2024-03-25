@@ -1,5 +1,7 @@
 import os
 os.system('cls')
 
-for i in range(0,10): # da primeira ao último menos -1
-    print(i)
+total = 0
+for i in range(1,11):
+    total += i
+print(f"Soma dos números de 1 a 10: {total}\n")

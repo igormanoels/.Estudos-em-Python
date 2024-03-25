@@ -24,6 +24,6 @@ elif imc <= 24.9:
 elif imc <= 29.9:
     print("\nClassificação: Sobrepeso.")
 elif imc <= 39.9:
-    print("\nClassificação: Obesidade Grave I")
+    print("\nClassificação: Obesidade Grave I.")
 else: 
-    print("\nClassificação: Obesidade Grave II")
+    print("\nClassificação: Obesidade Grave II.")

@@ -11,7 +11,7 @@ Diferente           !=
 Igual               ==
 OU                  or
 E                   and 
-NEGA                not
+NEGAÇÃO             not
 '''
 resposta = 3 > 2 and 4 > 2
 
