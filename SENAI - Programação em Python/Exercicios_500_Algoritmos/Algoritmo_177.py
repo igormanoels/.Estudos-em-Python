@@ -1,16 +1,14 @@
 import os
-import math
 
 os.system('cls')
 '''
-    Imprimir o quadrado dos numeros de 1 ate 20 
+    Imprimir os múltiplos de 5, no intervalo de 1 até 500. 
 '''
-
 c = 1
 
-while( c <= 20):
-    quad = math.pow(c, 2)
-    print(f"{c} ao quadrado é ---> {quad}")
+while c <= 500:
+    if c % 5 == 0:
+        print(c)
     c += 1
-    
+
 input("\n\nPressione o \"enter\" para encerrar...")

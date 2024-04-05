@@ -2,13 +2,13 @@ import os
 
 os.system('cls')
 '''
-    Imprimir todos os números de 100 até 1. 
+    Criar um algoritmo que imprima os números de 120 a 300. 
 '''
 
-c = 100
+c = 120
 
-while(c >= 1):
+while c <= 300:
     print(c)
-    c -= 1
-
+    c += 1
+    
 input("\n\nPressione o \"enter\" para encerrar...")

@@ -2,13 +2,16 @@ import os
 
 os.system('cls')
 '''
-    Imprimir os múltiplos de 5, no intervalo de 1 até 500. 
+    Imprimir os 100 primeiros pares. 
 '''
-c = 1
 
-while c <= 500:
-    if c % 5 == 0:
+c = 0
+numPar = 0
+
+while numPar <= 100:
+    if c % 2 == 0:
         print(c)
+        numPar += 1
     c += 1
-
+        
 input("\n\nPressione o \"enter\" para encerrar...")

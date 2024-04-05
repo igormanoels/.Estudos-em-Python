@@ -1,15 +1,18 @@
 import os
+import time
 
 os.system('cls')
 '''
-    Você já pensou em triangular uma matriz de ordem 10 usando 
-    a estrutura do para?
+    Desafio: Já pensou em fazer em simular uma pausa usando a estrutura para
+        comecei
+        <após alguns segundos>
+        parei
 '''
 
-print("Matriz 10x10: ")
-for i in range(10):
-    print("\n")
-    for j in range(10):
-        print(f"{i+1}-{j+1}", end="\t")
-
+for i in range(60):
+    time.sleep(1)
+    print(f"{i+1} segundo(s).")
+else:
+    print("Fim do cronometro.")
+    
 input("\n\nPressione o \"enter\" para encerrar...")

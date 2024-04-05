@@ -2,16 +2,14 @@ import os
 
 os.system('cls')
 '''
-    Matriz: ACIMA DA DIAGONAL PRINCIPAL 
+    Você já pensou em triangular uma matriz de ordem 10 usando 
+    a estrutura do para?
 '''
 
-print("Matriz 10 x 10: ")
+print("Matriz 10x10: ")
 for i in range(10):
-    for j in range(10):
-        if i < j:
-            print(f"{i+1}-{j+1}", end="\t")
-        else:
-            print("\t", end="")
     print("\n")
+    for j in range(10):
+        print(f"{i+1}-{j+1}", end="\t")
 
 input("\n\nPressione o \"enter\" para encerrar...")
