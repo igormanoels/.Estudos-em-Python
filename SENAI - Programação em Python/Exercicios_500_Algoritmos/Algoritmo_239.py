@@ -22,3 +22,4 @@ for i in range(10):
     
 print("Resultado da Série: ", res)
 
+input("\n\nPressione o \"enter\" para encerrar...")
