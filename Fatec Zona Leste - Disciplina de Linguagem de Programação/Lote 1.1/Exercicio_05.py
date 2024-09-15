@@ -6,9 +6,10 @@ valorA = int(input("Favor informar o valor de A: "))
 valorB = int(input("Favor informar o valor de B: "))
 valorC = int(input("Favor informar o valor de C: "))
 
-delta = math.pow(valorB,2) - 4 * valorA * valorC
+delta = (math.pow(valorB,2)) - (4 * valorA * valorC)
 
-res1 = (-valorB + math.sqrt(delta)) / (2 * valorA)
-res2 = (-valorB - math.sqrt(delta)) / (2 * valorA)
+res1 = (-valorB) + (math.sqrt(delta)) / (2 * valorA)
+res2 = (-valorB) - (math.sqrt(delta)) / (2 * valorA)
 
-print("x1= ", res1, "  -  x2= ",res2)
+
+print("x1= ", res1, "  e  x2= ",res2)

@@ -88,7 +88,7 @@ def pausar():
 # Propriedades da Tela
 tela = Tk()
 tela.title('Cronometro')
-tela.iconphoto(False, PhotoImage(file='C:\\Users\\sigor\\OneDrive - Fatec Centro Paula Souza\\Documents\\GitHub\\.Estudos-em-Python\\Canal Youtube - Usando Python (com João Futi Muanda)\\Projetos\\cronometro\\icones\\time.png'))
+#tela.iconphoto(False, PhotoImage(file='C:\\Users\\sigor\\OneDrive - Fatec Centro Paula Souza\\Documents\\GitHub\\.Estudos-em-Python\\Canal Youtube - Usando Python (com João Futi Muanda)\\Projetos\\cronometro\\icones\\time.png'))
 tela.geometry('350x150')
 tela.resizable(width=False, height=False)
 tela.config(background=azul)
