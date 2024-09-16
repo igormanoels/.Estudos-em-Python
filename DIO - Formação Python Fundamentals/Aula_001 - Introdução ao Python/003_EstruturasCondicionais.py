@@ -28,3 +28,13 @@ if saque <= saldo:
 else:
     print("Não há saldo suficiente! Saldo disponível R$", saldo)
 
+# Escolha...caso
+op = int(input("Menu de investimento \n1-Poupança \n2-Renda fixa \nDigite a opção desejada: "))
+investimento = float(input("Informe agora o valor a ser investido: R$"))
+match op:
+    case 1:
+        print(f"Montante após investimento R${(investimento*1.03):.2f}")
+    case 2:
+        print(f"Montante após investimento R${(investimento * 1.05):.2f}")
+    case _:
+        print("Opção inválida!")
