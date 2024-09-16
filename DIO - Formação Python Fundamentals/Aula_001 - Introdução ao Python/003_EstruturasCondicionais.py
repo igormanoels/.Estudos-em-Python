@@ -38,3 +38,15 @@ match op:
         print(f"Montante após investimento R${(investimento * 1.05):.2f}")
     case _:
         print("Opção inválida!")
+# Outra forma
+def classificar_numero(numero):
+    match numero:
+        case 1 | 2 | 3:
+            return "Número pequeno"
+        case 4 | 5 | 6:
+            return "Número médio"
+        case _:
+            return "Número fora do intervalo"
+
+numero = int(input("Digite um número entre 1 e 6: "))
+print(classificar_numero(numero))
