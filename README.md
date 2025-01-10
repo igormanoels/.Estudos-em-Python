@@ -3,7 +3,6 @@
 ## Caminho para compilar um projeto em python
 
 ### Usando pyinstaller
-
 - pyinstaller --onefile --windowed seu_script.py
     - '--onefile' para gerar um arquivo único
     - '--windoed' para gerar a janela do projeto
