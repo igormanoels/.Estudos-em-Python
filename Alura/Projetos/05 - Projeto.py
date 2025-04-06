@@ -9,4 +9,16 @@ Tabuada do 2:
 2 x 10 = 20'
 '''
 
+tabuada = 0
+
+while (True):
+    tabuada = int(input('Informe um número da tabuada: '))
+    if tabuada >= 1 and tabuada <= 10:
+        break
+
+print(f'Tabuada do {tabuada}:')
+for i in range (1,11):
+    print(f'{tabuada} x {i} = {tabuada*i}')
+
+
 
