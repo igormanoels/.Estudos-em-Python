@@ -42,3 +42,11 @@ notas_atualizadas = map(lambda x: x+qualitativo, notas)
 # Tranforma o objeto map, em uma lista
 notas_atualizadas = list(notas_atualizadas)
 print(notas_atualizadas) 
+
+
+# OUTRA FORMA DE APLICAR O MAP COM LIST
+temp_celsius = [0, 25, 37, 78, 100]
+temp_fahrenheit = list(map(lambda x: (x * 9/5) + 32, temp_celsius))
+print(temp_fahrenheit)
+
+
