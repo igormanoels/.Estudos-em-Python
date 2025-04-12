@@ -5,15 +5,24 @@ Depois, calcule a média anual das temperaturas e mostre todas as temperaturas a
 em que mês elas ocorreram, mostrando os meses por extenso (Janeiro, Fevereiro, etc.).
 '''
 
+meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+]
+
+temperaturas = []
+media = 0
+
+for i in range(1, len(meses)):
+    temperaturas.append(int(input('Informe o valor da temperatura: ')))
 
 
+media = round (sum(temperaturas) / len(temperaturas))
 
-
-
-
-
-
-
+print('\nLista de temperaturas acima da média')
+for m, t in zip(meses, temperaturas):
+    if t > media:
+        print(f'Mês: {m} - Temperatura: {t}º')
 
 
 

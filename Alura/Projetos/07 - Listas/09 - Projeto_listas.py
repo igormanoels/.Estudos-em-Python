@@ -15,12 +15,21 @@ Gabarito da prova:
 09 - A
 10 - B
 '''
+gabarito = {1:'D', 2:'A', 3:'C', 4:'B', 5:'A', 6:'D', 7:'C', 8:'C', 9:'A', 10:'B'}
+respostas = {}
+nota = 0
+
+questao = 1
+
+while (questao <= 10):
+    respostas[questao] = input('Informe sua resposta: ').upper()
+    questao +=1
+
+for g, r in zip(gabarito.values(), respostas.values()): # A função zip junta os elementos em pares
+    if g == r:
+        nota +=1
 
 
-
-
-
-
-
+print(f'O aluno tirou {nota}')
 
 
