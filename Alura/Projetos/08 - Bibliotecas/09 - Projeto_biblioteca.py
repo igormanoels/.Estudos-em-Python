@@ -7,14 +7,14 @@ No final, informe quais números possuem raízes inteiras e seus respectivos val
 1.5 é inteiro? : False
 2 é inteiro? : True
 '''
+from math import sqrt
 
 numeros = [2, 8, 15, 23, 91, 112, 256]
 
+raiz_numeros = []
 
-
-num = 1.5
-num_2 = 2
-print(f'{num} é inteiro? :', num // 1 == num)
-print(f'{num_2} é inteiro? :', num_2 // 1 == num_2)
+for n in numeros:
+    n = round(sqrt(n), 2)
+    print(f'{n} é inteiro? :', n // 1 == n)
 
 
