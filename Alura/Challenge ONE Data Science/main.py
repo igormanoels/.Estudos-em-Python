@@ -37,6 +37,7 @@ while(True):
                 limpar_tela()
             case 0:
                 limpar_tela()
+                break
             case _:
                 print('\nOpção inválida! \nEscolha uma das opções do menu para consultar os dados ou digite 0 para encerrar')
                 input('Pressione \'Enter\' para tentar novamente... ')
