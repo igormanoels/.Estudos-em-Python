@@ -82,6 +82,7 @@ def vendasPorCategoria():
                 if categoria == cat:
                     total_categoria += pr
         faturamento_categoria[categoria] = round(total_categoria, 2)
+    print(faturamento_categoria)
     graficos.graficoCategorias(faturamento_categoria)
 
 
@@ -95,12 +96,14 @@ def listarProdutos():
 
 
 def ordenarProdutosMaior():
-    ordenado = dict(sorted(qtd_produtos.items(), key=lambda item: item[1], reverse=True))    
+    ordenado = dict(sorted(qtd_produtos.items(), key=lambda item: item[1], reverse=True))
+    print(ordenado)    
     return ordenado
 
 
 def ordenarProdutosMenor():
     ordenado = dict(sorted(qtd_produtos.items(), key=lambda item: item[1], reverse=False))    
+    print(ordenado)
     return ordenado
 
 

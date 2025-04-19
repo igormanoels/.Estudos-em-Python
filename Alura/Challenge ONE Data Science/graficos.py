@@ -68,7 +68,7 @@ def graficoCategorias(categoriaLojas):
         vendas.append(venda)
 
     plt.pie(vendas, labels=categorias, autopct='%1.2f%%')
-    plt.title('Gráfico de Custo médio dos fretes por Loja')
+    plt.title('Total de Vendas por Categoria')
     plt.show()
 
 
