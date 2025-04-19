@@ -1,5 +1,6 @@
 
 import pandas as pd
+import graficos
 
 
 url = "https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science/refs/heads/main/base-de-dados-challenge-1/loja_1.csv"
@@ -30,6 +31,8 @@ def verificarFaturamento():
             faturamento += preco
         num_loja = num_loja + str(i)
         faturamento_total[num_loja] = round(faturamento, 2)
+    print(faturamento_total)
+    graficos.graficoFaturamento(faturamento_total)
 
 
 
@@ -43,7 +46,8 @@ def avaliacaoMedia():
         media = (media / (len(loja) - 1))
         num_loja = num_loja + str(i)
         avaliacao_media_lojas[num_loja] = round(media, 1)
-
+    print(avaliacao_media_lojas)
+    graficos.graficoAvaliacao(avaliacao_media_lojas)
 
 
 # CÁLCULA O CUSTO COM O FRETE POR LOJA
@@ -55,6 +59,8 @@ def verificarCustoFrete():
             frete_total += frete
         num_loja = num_loja + str(i)
         valor_medio_frete[num_loja] = round((frete_total / (len(loja) - 1)), 2)
+    print(valor_medio_frete)
+    graficos.graficoFretes(valor_medio_frete)
 
 
 
@@ -76,6 +82,7 @@ def vendasPorCategoria():
                 if categoria == cat:
                     total_categoria += pr
         faturamento_categoria[categoria] = round(total_categoria, 2)
+    graficos.graficoCategorias(faturamento_categoria)
 
 
 
@@ -97,7 +104,7 @@ def ordenarProdutosMenor():
     return ordenado
 
 
-def contarQtdProdutos():
+def contarQtdProdutos(listarPor):
     listarProdutos()
     for produto in produtos:
         qtd = 0
@@ -106,9 +113,13 @@ def contarQtdProdutos():
                 if produto == pdt:
                     qtd +=1
         qtd_produtos[produto] = qtd
+    
+    if listarPor == 6:
+        graficos.graficoQuantidade(ordenarProdutosMaior(), listarPor)
+    else:
+        graficos.graficoQuantidade(ordenarProdutosMenor(), listarPor)
 
     
-
 
 
 '''
