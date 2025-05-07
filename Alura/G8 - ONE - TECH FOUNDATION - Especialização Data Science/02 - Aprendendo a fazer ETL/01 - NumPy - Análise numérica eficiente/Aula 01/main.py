@@ -59,6 +59,46 @@ plt.show()
 
 # Caso fosse necessário buscar apenas os meses para gerar ano a ano
 Moscow_ano1 = Moscow[0:12] 
-Moscow_ano2 = Moscow[12:24]
-Moscow_ano3 = Moscow[24:36]
-Moscow_ano4 = Moscow[36:48]
+Moscow_ano2 = Moscow[13:25]
+Moscow_ano3 = Moscow[25:37]
+Moscow_ano4 = Moscow[37:49]
+
+qtd_meses_ano = np.arange(1,13,1) 
+
+# Ao gerar gráficos com mais de dois dados, é necessário separar, do contrário as informações não ficaram sobrepostas
+plt.plot(qtd_meses_ano, Moscow_ano1)
+plt.plot(qtd_meses_ano, Moscow_ano2)
+plt.plot(qtd_meses_ano, Moscow_ano3)
+plt.plot(qtd_meses_ano, Moscow_ano4)
+plt.legend(['Ano1', 'Ano2', 'Ano3', 'Ano4'])
+plt.title('Andamento do preço das maças em Moscow')
+plt.show()
+
+
+resp = np.array_equal(Moscow_ano1, Moscow_ano2) # retorna um boolean
+
+resp = np.allclose(Moscow_ano1, Moscow_ano2, 10) # Verifica se a distancia entre os valores vai até 10, retorna um boolean
+
+
+
+# Lidando com valores NaN
+plt.plot(qtd_meses, Kalin)
+print(Kalin,'\n')
+plt.show()
+
+
+print(np.isnan(Kalin),'\n' )  # a função is NaN, retorna um boolean para cada posição do array criando um array de verificação
+print(sum(np.isnan(Kalin))) # com o uso da função sum, o retorno é uma soma das quantidade true, ou seja o total de NaNs contidos
+
+
+#Para tratar os valores NaNs por conveniencia se aplica a media entre o valor anterior e o posterios a posição com valor NaN
+Kalin[4] = np.mean([Kalin[3],Kalin[5]]) # Por ser um array é preciso passar um colchete dentro da função
+print('\n\n',Kalin,'\n\n')
+
+
+
+# Comparando a média de preços
+media_preco_moscow = np.mean([Moscow])
+media_preco_kalin = np.mean([Kalin])
+
+print(media_preco_moscow,'\t',media_preco_kalin)
