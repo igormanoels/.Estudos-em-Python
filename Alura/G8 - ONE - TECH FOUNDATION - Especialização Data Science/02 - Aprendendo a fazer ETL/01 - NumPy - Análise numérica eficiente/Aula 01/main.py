@@ -101,4 +101,58 @@ print('\n\n',Kalin,'\n\n')
 media_preco_moscow = np.mean([Moscow])
 media_preco_kalin = np.mean([Kalin])
 
-print(media_preco_moscow,'\t',media_preco_kalin)
+print(media_preco_moscow,'\t',media_preco_kalin,'\n\n\n')
+
+
+
+
+# Criando uma reta para análise da dispersão dos dados
+# equação da reta 'y = ax+b'
+x = qtd_meses
+y = 0.52*x+80 # Para chegar nesse valor de 0,52 que é o coeficiente angular, é preciso aplicar uma expressão
+print(y)
+
+'''
+'''
+reta = np.sqrt(np.sum(np.power(Moscow-y,2)))
+reta2 = np.linalg.norm(Moscow-y) # Essa é a aplicação via função da 'NP', com ela vc chega ao mesmo resultado
+print('valor da reta = ', reta,'\t',reta2)
+
+
+plt.plot(qtd_meses, Moscow)
+plt.plot(x,y)
+plt.show()
+
+
+
+
+
+# Cálculando a expressão do coeficiente angular, esse é um processo de regressão linear
+Y = Moscow
+X = qtd_meses
+N = np.size(Moscow)
+
+A = (N*np.sum(X*Y) - np.sum(X)*np.sum(Y)) / (N*np.sum(X**2) - np.sum(X)**2) 
+print(A)
+
+B = np.mean(Y) - A*np.mean(X)
+print(B)
+
+Y = A*X+B
+print(Y)
+
+print(np.linalg.norm(Moscow-Y))
+
+plt.plot(qtd_meses, Moscow)
+plt.plot(X,Y)
+plt.plot(41.5, 41.5*A+B, '*r') # Determina o ponto, onde uma ocorrencia quer ser destacada, como ver onde está o valor médio na metade do mes 41
+plt.plot(100, 100*A+B, '*r')   # E aqui qual será o valor do mes 100
+plt.show()
+
+
+
+
+
+
+
+
