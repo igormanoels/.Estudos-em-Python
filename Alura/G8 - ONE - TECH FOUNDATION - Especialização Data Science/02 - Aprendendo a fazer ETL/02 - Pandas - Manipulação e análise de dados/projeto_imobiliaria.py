@@ -140,3 +140,51 @@ print('\n', df_tratado[selecao_final])
 # Aplicando filtros - Apartamentos que possuem pelo menos 2 quartos, aluguel menor que R$ 3000 e área maior que 70 m².
 selecao = (df_tratado['Quartos'] >= 2) & (df_tratado['Valor'] < 3000) & (df_tratado['Area'] > 70)
 print('\n', df_tratado[selecao])
+
+
+# Quais apartamentos possuem área maior que 80 m² 'ou' aluguel menor que R$ 4.000,00?
+selecao = (df_tratado['Area'] > 80) | (df_tratado['Valor'] < 4000)
+print('\n', df_tratado[selecao])
+
+
+
+
+
+
+# Para finalizar, precisamos salvar nosso dataframe no formato csv, após todas as análises e tratamentos.
+df_tratado.to_csv('dados-tratados.csv', index=False, sep=';')
+
+'''
+df.to_csv('C:\\Users\\SeuUsuario\\Documentos\\saida.csv', index=False)
+Outra forma de salvar o arquivo é além de nomer, dar o caminho antes do nome
+    - Então como parametros temos loca e nome
+    - inclusão do indice original ou não 
+    - sep para alterar o tipo do separador q por padrão é ',' mas pode ser qualquer outro simbolo
+'''
+
+
+
+
+# CRIANDO COLUNAS ADCIONAIS AOS DADOS
+# valor_por_mes: essa coluna deve conter os gastos mensais de cada imóvel, incluindo aluguel e condomínio;
+dados['Valor_por_mes'] = dados['Valor'] + dados['Condominio']
+print('\n', dados.head())
+
+
+# valor_por_ano: essa coluna deve conter os gastos anuais por imóvel, ou seja, IPTU mais 12 meses de aluguel e condomínio.
+dados['Valor_por_ano'] = (((dados['Valor'] + dados['Condominio']) * 12) + dados['IPTU'])
+print('\n', dados.head())
+
+
+# Descrição: essa coluna deve possuir uma sumarização das principais informações dos imóveis que serão apresentadas no site: tipo de imóvel, bairro, quantidade de quartos e vagas de garagem;
+# não é possivel concatear valores de tipos diferentes, portando é usado uma função oara converter passando o tipo final como parametro --> astype(str)
+dados['Descricao'] = dados['Tipo'] + ' em ' + dados['Bairro'] + ' com ' + dados['Quartos'].astype(str) + ' quarto(s) e ' + dados['Vagas'].astype(str) + ' vagas.'
+print('\n', dados.head())
+
+# Possui_suite: essa deve ser uma coluna que informe apenas se o imóvel possui ou não suítes, sem se importar com a quantidade.
+dados['Possui_suite'] = dados['Suites'].apply(lambda x: "Sim" if x > 0 else "Não")
+print('\n', dados.head())
+
+
+
+

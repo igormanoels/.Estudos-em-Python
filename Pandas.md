@@ -32,3 +32,7 @@
 | Aplicação de Funções             | `apply()`           | Aplica função linha/coluna                | `df['A'].apply(lambda x: x * 2)`                                         |
 |                                  | `map()`             | Aplica função a Series                    | `df['A'].map({'Sim': 1, 'Não': 0})`                                      |
 |                                  | `applymap()`        | Aplica função a todos os elementos        | `df.applymap(lambda x: x * 2)`                                           |
+
+
+
+[Documentação: API reference](https://pandas.pydata.org/docs/reference/index.html)
