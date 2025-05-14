@@ -8,10 +8,15 @@ Tabuada do 7:
 [...]
 7 x 10 = 70
 
-
 '''
 
+def tabuada(num):
+    print('Tabuada do ', num)
+    for i in range(0,11,1):
+        print(num, ' x ', i , ' = ', num*i)
 
 
+n_tabuada = int(input('Informe o número da tabuada desejada: '))
+tabuada(n_tabuada)
 
 

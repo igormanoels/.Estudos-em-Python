@@ -6,4 +6,7 @@ valor limite para a escolha aleatória ou um intervalo se passado o limite míni
 Por exemplo, randrange(5) gera valores inteiros menores que 5.
 
 '''
+from random import randrange
+
+print('Número sorteado: ', randrange(0,100))
 
