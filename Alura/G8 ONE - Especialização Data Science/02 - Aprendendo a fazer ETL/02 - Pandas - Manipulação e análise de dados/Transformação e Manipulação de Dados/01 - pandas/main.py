@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-hospedagem = pd.read_json('D:/GitHub/.Estudos-em-Python/Alura/G8 - ONE - TECH FOUNDATION - Especialização Data Science/02 - Aprendendo a fazer ETL/02 - Pandas - Manipulação e análise de dados/Transformação e Manipulação de Dados/01 - Manipulando dados com pandas/dados/dados_hospedagem.json')
+hospedagem = pd.read_json('Alura/G8 ONE - Especialização Data Science/02 - Aprendendo a fazer ETL/02 - Pandas - Manipulação e análise de dados/Transformação e Manipulação de Dados/01 - pandas/dados/dados_hospedagem.json')
 # Normalizando dados de hospedagem
 hospedagem = pd.json_normalize(hospedagem['info_moveis'])
 
@@ -63,13 +63,4 @@ hospedagem['descricao_local'] = hospedagem['descricao_local'].str.split(' ') # T
 #Coluna comodidades
 hospedagem['comodidades'] = hospedagem['comodidades'].str.replace('\{|}|\"','', regex=True) # Remove os {,} e "
 hospedagem['comodidades'] = hospedagem['comodidades'].str.split(',') # Transforma os textos em uma lista de palavras substituindo as virgulas
-
-
-
-# Tratando os dados com datetime
-#moveis = pd.read_json('D:/GitHub/.Estudos-em-Python/Alura/G8 - ONE - TECH FOUNDATION - Especialização Data Science/02 - Aprendendo a fazer ETL/02 - Pandas - Manipulação e análise de dados/Transformação e Manipulação de Dados/01 - Manipulando dados com pandas/dados/moveis_disponiveis.json')
-#print('\n', moveis.head())
-
-
-
 
