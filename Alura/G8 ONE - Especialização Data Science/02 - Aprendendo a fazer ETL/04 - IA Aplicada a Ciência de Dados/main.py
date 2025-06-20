@@ -519,3 +519,171 @@ plt.xticks(rotation=45, ha='right')
 # 8. Ajustar layout e mostrar
 plt.tight_layout()
 plt.show()
+
+
+
+
+
+####################################################################################################################################################################
+'''
+PROMPT 9
+Temos um DataFrame chamado "df" e queremos construir um visual que apresente a proporção dos(as) usuários(as) que estão aderindo o programa de cashback da Zoop.
+
+Em "df", temos a coluna "cashback" que dispõe de tais dados.
+
+Utilize as bibliotecas de visualização de dados do Python para criar essa visualização.
+'''
+# Calcular a proporção de adesão ao cashback
+proporcao_cashback = dados_completos['cashback'].value_counts(normalize=True)
+
+# Visualização em gráfico de circulo
+plt.figure(figsize=(6, 6))
+plt.pie(proporcao_cashback, labels=proporcao_cashback.index, autopct='%1.1f%%', colors=['skyblue', 'lightcoral'])
+plt.title('Proporção de Usuários Aderindo ao Cashback')
+plt.show()
+
+
+# Cores invertidas
+cores_invertidas = ['lightcoral', 'skyblue']  
+# Visualização em gráfico de rosca (donut)
+plt.figure(figsize=(6, 6))
+plt.pie(proporcao_cashback, labels=proporcao_cashback.index, autopct='%1.1f%%', startangle=90, colors=cores_invertidas, wedgeprops=dict(width=0.6))
+plt.title('Proporção de Usuários Aderindo ao Cashback')
+plt.show()
+
+
+# Visualização em gráfico de rosca invertido
+plt.figure(figsize=(6, 6))
+plt.pie (proporcao_cashback, labels=proporcao_cashback.index, autopct='%1.1f%%', colors=['lightcoral', 'skyblue'], startangle=90, edgeprops=dict(width=0.4))
+plt.title('Proporção de Usuários Aderindo ao Cashback')
+
+
+# Desenhar um círculo no centro para criar um gráfico de rosca
+centro_circulo = plt.Circle((0, 0), 0.6, color='white', fc='white', linewidth=1.25)
+fig = plt.gcf()
+fig.gca().add_artist(centro_circulo)
+plt.show()
+
+
+
+
+
+####################################################################################################################################################################
+'''
+PROMPT 10
+Temos um DataFrame chamado "df" e queremos construir um visual que apresente a distribuição das avaliações do público em relação as compras feitas na loja online.
+
+Em "df", temos a coluna "avaliacao_compra" com as notas dadas por cada usuário em relação a compra que fizeram que variam de 0 a 10 em números inteiros.
+
+Desejamos criar uma visualização que apresente a distribuição desses dados.
+
+Utilize as bibliotecas de visualização de dados do Python para criar essa visualização.
+'''
+# Visualização em histograma
+plt.figure(figsize=(10, 6))
+plt.hist(dados_completos['avaliacao_compra'], bins=11, edgecolor='black', color='skyblue')
+plt.title('Distribuição das Avaliações de Compra')
+plt.xlabel('Avaliação')
+plt.ylabel('Frequência')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+
+
+
+
+
+####################################################################################################################################################################
+'''
+PROMPT 11
+Temos um DataFrame chamado "df" e queremos construir um visual que apresente a distribuição do nosso público por idade e sexo biológico.
+
+Em "df", temos as colunas:
+
+- idade: idade da pessoa que realizou a compra
+- sexo_biologico: sexo biológico da pessoa que realizou a compra, com dados categóricos
+
+Desejamos criar uma visualização que apresente a distribuição desses dados.
+
+Utilize as bibliotecas de visualização de dados do Python para criar essa visualização. 
+'''
+# Visualização em gráfico de barras empilhadas
+plt.figure(figsize=(12, 8))
+sns.histplot(data=dados_completos, x='idade', hue='sexo_biologico', multiple='stack', bins=20, palette='Set2')
+plt.title('Distribuição do Público por Idade e Sexo Biológico')
+plt.xlabel('Idade')
+plt.ylabel('Contagem')
+plt.legend(title='Sexo Biológico')
+plt.show()
+
+# Visualização em gráfico de barras empilhadas
+plt.figure(figsize=(10, 6))
+sns.histplot(data=dados_completos, x='idade', hue='sexo_biologico', multiple='stack', bins=20, palette='Set2')
+plt.title('Distribuição do Público por Idade e Sexo Biológico')
+plt.xlabel('Idade')
+plt.ylabel('Contagem')
+plt.legend(title='Sexo Biológico')
+plt.show()
+
+# Visualização em boxplot
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=dados_completos, x='sexo_biologico', y='idade', palette='pastel')
+plt.title('Distribuição da Idade por Sexo Biológico')
+plt.xlabel('Sexo Biológico')
+plt.ylabel('Idade')
+plt.show()
+
+
+
+
+
+####################################################################################################################################################################
+# Adicionando as cores como variáveis do projeto
+VERMELHO_1,	VERMELHO_2,	VERMELHO_3 = "#e23155",	"#cc2c4e", "#b32742"
+AZUL_1,	AZUL_2,	AZUL_3 = "#203f75",	"#1c3867", "#19325b"
+BRANCO,	CINZA_1, CINZA_2, CINZA_3, CINZA_4,	CINZA_5 = "#ffffff", "#ebebeb",	"#d9d9d9", "#cccccc", "#555655", "#231f20"
+AQUA_1,	AQUA_2,	AQUA_3 = "#addcd4",	"#9fccc5", "#96bfb9"
+
+# Visualização
+plt.figure(figsize=(10, 6))
+plt.bar(metodos_de_pagamento['Metodo de Pagamento'], metodos_de_pagamento['Quantidade'], color='skyblue')
+plt.title('Quantidade de Métodos de Pagamento Utilizados')
+plt.xlabel('Método de Pagamento')
+plt.ylabel('Quantidade')
+plt.xticks(rotation=45, ha='right')
+
+# Exibir o gráfico
+plt.show()
+
+
+
+
+
+####################################################################################################################################################################
+# Identidade visual Zoop
+CINZA_1 = "#E6E6E6"
+VERMELHO_1 = "#FF4D4F"
+CINZA_5 = "#555555"
+AZUL_1 = "#1890FF"
+
+# Agrupar por método de pagamento e contar o total de ocorrências 
+metodos_de_pagamento = dados_completos['metodo_pagamento'].value_counts()
+
+# Configurações do gráfico
+plt.figure(figsize=(10, 6), facecolor=CINZA_1)
+ax = plt.axes()
+ax.set_facecolor(CINZA_1)
+plt.bar(metodos_de_pagamento.index, metodos_de_pagamento, color=VERMELHO_1)
+
+# Adicionar texto com o total acima de cada barra
+for i, v in enumerate(metodos_de_pagamento):
+    plt.text(i, v + 0.1, str(v), ha='center', va='bottom', color=AZUL_1, fontsize=12)
+
+# Configurações adicionais
+plt.title('Métodos de Pagamentos mais Utilizados em 2023', fontsize=18, color=CINZA_5) 
+plt.xticks(fontsize=12, color=AZUL_1)
+plt.yticks([])
+plt.xlabel('Método de Pagamento', fontsize=12, color=AZUL_1)
+ax.spines[['top', 'right', 'left']].set_visible(False)
+plt.show()
+
+
